@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import TransactionalInformation from "./TransactionalInformation";
 
 export default function TabSelector() {
   const [selected, setSelected] = useState("transaction");
@@ -15,13 +16,14 @@ export default function TabSelector() {
   return (
     <View>
       <View style={styles.tabContainer}>
-        <Pressable style={[styles.tab, selected === "transaction" && styles.selectedTab]} onPress={transactionTabHandler}>
+        <Pressable android_ripple={{color: "#ccc"}} style={({pressed}) => [styles.tab, selected === "transaction" && styles.selectedTab, pressed && styles.pressedTab]} onPress={transactionTabHandler}>
           <Text style={[styles.tabText, selected === "transaction" && styles.selectedTabText]}>거래 내역</Text>
         </Pressable>
-        <Pressable style={[styles.tab, selected === "portfolio" && styles.selectedTab]} onPress={portfolioTabHandler}>
+        <Pressable style={({pressed}) => [styles.tab, selected === "portfolio" && styles.selectedTab, pressed && styles.pressedTab]} onPress={portfolioTabHandler}>
           <Text style={[styles.tabText, selected === "portfolio" && styles.selectedTabText]}>포트폴리오</Text>
         </Pressable>
       </View>
+      {selected === "transaction" && <TransactionalInformation />}
     </View>
   )
 }
@@ -35,12 +37,16 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 10,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    // backgroundColor: "blue"
   },
   selectedTab: {
     borderBottomColor: "#FFAC30",
     borderBottomWidth: 2,
     borderStyle: "solid",
+  },
+  pressedTab: {
+    opacity: 0.5
   },
   tabText: {
     color: "#767676",

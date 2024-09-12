@@ -43,7 +43,7 @@ export default function DetailedTransaction({dutched, data, transactionDate}) {
           </View>
         </View>
         <View style={styles.subDetailedContentContainer}>
-          <Text style={styles.subDetailedContentText}></Text>
+          <Text style={styles.subDetailedContentText}>거래 후 잔액</Text>
           <Text style={styles.subDetailedContentText}></Text>
         </View>
       </View>

@@ -1,6 +1,7 @@
 import { FlatList, SectionList, StyleSheet, View, Text, Pressable } from "react-native";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import DetectedDutchPayModal from "./DetectedDutchPayModal";
 
 const dummyData = [
   {
@@ -49,6 +50,21 @@ const dummyData = [
   }
 ]
 
+const ductchDummyData = [
+  {
+    date: "2024.08.16",
+    time: "19:37",
+    name: "용용선생 강남점",
+    amount: -500000    
+  },
+  {
+    date: "2024.08.16",
+    time: "19:37",
+    name: "대한항공",
+    amount: -500000    
+  }
+]
+
 const processedData = dummyData.map((item) => ({
   title: item.date,
   data: item.transactions
@@ -56,6 +72,8 @@ const processedData = dummyData.map((item) => ({
 
 export default function TransactionalInformation() {
   const [transactionData, setTransactionData] = useState(processedData);
+  const [dutchData, setDutchData] = useState(ductchDummyData);
+  const [isModal, setIsModal] = useState(true);
   const navigation = useNavigation();
 
   const detailTransactionBreakdownHandler = (title,{data, date}) => {
@@ -96,15 +114,18 @@ export default function TransactionalInformation() {
   }
 
   return (
-      <SectionList
-        sections={transactionData}
-        // style={styles.listContainer}
-        renderItem={breakdown}
-        renderSectionHeader={transactionDate}
-        contentContainerStyle={styles.listInnerContainer}
-        stickySectionHeadersEnabled={false}
-        showsVerticalScrollIndicator={false}
-      />
+      <>
+        <SectionList
+          sections={transactionData}
+          // style={styles.listContainer}
+          renderItem={breakdown}
+          renderSectionHeader={transactionDate}
+          contentContainerStyle={styles.listInnerContainer}
+          stickySectionHeadersEnabled={false}
+          showsVerticalScrollIndicator={false}
+        />
+        {isModal && <DetectedDutchPayModal isModal={isModal} setIsModal={setIsModal} dutchData={dutchData} />}
+      </>
   )
 }
 

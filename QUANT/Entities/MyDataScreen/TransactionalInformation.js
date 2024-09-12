@@ -1,5 +1,6 @@
 import { FlatList, SectionList, StyleSheet, View, Text, Pressable } from "react-native";
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const dummyData = [
   {
@@ -55,13 +56,18 @@ const processedData = dummyData.map((item) => ({
 
 export default function TransactionalInformation() {
   const [transactionData, setTransactionData] = useState(processedData);
+  const navigation = useNavigation();
+
+  const detailTransactionBreakdownHandler = (title,{data, date}) => {
+    navigation.navigate("DetailedTransactionBreakdown", {title, data, date});
+  }
 
   const breakdown = ({item, index, section}) => {
     const lastItem = index === section.length-1;
 
     return (
       // <Pressable>
-        <Pressable android_ripple={{color: "#ccc"}} style={({pressed}) => [styles.breakdownContainer, pressed && styles.pressedBreakdownContainer]}>
+        <Pressable android_ripple={{color: "#ccc"}} style={({pressed}) => [styles.breakdownContainer, pressed && styles.pressedBreakdownContainer]} onPress={() => detailTransactionBreakdownHandler("상세거래내역",{data: item, date: section.title})}>
           <View style={styles.primaryContent}>
             <Text style={styles.nameText}>{item.name}</Text>
             <Text style={[styles.amountText, {color: item.amount > 0 ? "#3A4276" : "#505050"}]}>{item.amount > 0 ? `+${item.amount.toLocaleString()}원` : `${item.amount.toLocaleString()}원`}</Text>

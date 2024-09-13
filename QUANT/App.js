@@ -1,31 +1,39 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as Linking from 'expo-linking';
+
 import MyDataScreen from './Screens/MyDataScreen';
 import DetailedTransactionBreakdownScreen from './Screens/DetailedTransactionBreakdownScreen';
+import Pay from './Screens/Pay';
 
 const Stack = createNativeStackNavigator();
+
+const linking = {
+  prefixes: [Linking.createURL('/')],
+  config: {
+    screens: {
+      Pay: 'pay',
+      MyData: 'mydata',
+      DetailedTransactionBreakdown: 'detailedTransactionBreakdown',
+    },
+  },
+};
 
 export default function App() {
   return (
     <>
-      <StatusBar style='auto' />
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name='MyData' component={MyDataScreen} options={{headerShown: false}}/>
-          <Stack.Screen name='DetailedTransactionBreakdown' component={DetailedTransactionBreakdownScreen} options={{headerShown: false}} />
+      <StatusBar style="auto" />
+      <NavigationContainer linking={linking}>
+        <Stack.Navigator 
+          initialRouteName='MyData'
+          screenOptions={{ headerShown: false }}
+          >
+          <Stack.Screen name="MyData" component={MyDataScreen} />
+          <Stack.Screen name="DetailedTransactionBreakdown" component={DetailedTransactionBreakdownScreen} />
+          <Stack.Screen name="Pay" component={Pay}  />
         </Stack.Navigator>
       </NavigationContainer>
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

@@ -18,7 +18,7 @@ export default function DetailedTransactionBreakdownScreen({navigation, route}) 
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <View style={styles.screen}>
       <BackComponent title={title} backPageHandler={backPageHandler} />
-      <DetailedTransaction dutched={dutched} data={data} transactionDate={transactionDate} />
+      <DetailedTransaction data={data} transactionDate={transactionDate} />
     </View>
     </TouchableWithoutFeedback>
   )

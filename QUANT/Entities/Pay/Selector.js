@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { Animated, Easing, TouchableOpacity } from 'react-native'; // Import Animated and Easing
 import styled from 'styled-components/native';
-import { TouchableOpacity, Animated, Easing } from 'react-native';
 
 export default function Selector() {
   const [isTimeZoneFocus, setIsTimeZoneFocus] = useState('1/N');
@@ -11,10 +11,8 @@ export default function Selector() {
   const selectSwitch = (item) => {
     setIsTimeZoneFocus(item);
 
-    
     const toValue = item === '1/N' ? 0 : 120;
 
-    
     Animated.timing(slideAnim, {
       toValue,
       duration: 200,

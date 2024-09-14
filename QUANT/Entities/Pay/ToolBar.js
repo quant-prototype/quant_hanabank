@@ -8,7 +8,7 @@ export default function ToolBar({title}) {
   const navigation = useNavigation();
   
   const handleCloseButtonClick = () => {
-    navigation.navigate("MyData");
+    navigation.goBack();
   }
 
   return (

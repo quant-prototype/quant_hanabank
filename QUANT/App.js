@@ -6,6 +6,7 @@ import * as Linking from 'expo-linking';
 import MyDataScreen from './Screens/MyDataScreen';
 import DetailedTransactionBreakdownScreen from './Screens/DetailedTransactionBreakdownScreen';
 import Pay from './Screens/Pay';
+import Main from './Screens/Main';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,9 +27,10 @@ export default function App() {
       <StatusBar style="auto" />
       <NavigationContainer linking={linking}>
         <Stack.Navigator 
-          initialRouteName='MyData'
+          initialRouteName='Main'
           screenOptions={{ headerShown: false }}
           >
+          <Stack.Screen name="Main" component={Main} />
           <Stack.Screen name="MyData" component={MyDataScreen} />
           <Stack.Screen name="DetailedTransactionBreakdown" component={DetailedTransactionBreakdownScreen} />
           <Stack.Screen name="Pay" component={Pay}  />

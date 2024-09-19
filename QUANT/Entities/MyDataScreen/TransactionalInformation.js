@@ -169,19 +169,17 @@ const styles = StyleSheet.create({
   },
   nameText: {
     color: "#1B1D28",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-600",
     fontSize: 18,
     fontStyle: "normal",
-    fontWeight: "600",
     lineHeight: 26,
     letterSpacing: -0.45
   },
   amountText: {
     color: "#3A4276",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-600",
     fontSize: 18,
     fontStyle: "normal",
-    fontWeight: "600",
     lineHeight: 26,
     letterSpacing: -0.45
   },
@@ -195,37 +193,33 @@ const styles = StyleSheet.create({
   },
   timeText: {
     color: "#767676",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-400",
     fontSize: 13,
     fontStyle: "normal",
-    fontWeight: "400",
     lineHeight: 18,
     letterSpacing: -0.325
   },
   typeText: {
     color: "#FFAC30",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-400",
     fontSize: 12,
     fontStyle: "normal",
-    fontWeight: "400",
     lineHeight: 18,
     letterSpacing: -0.325
   },
   balanceText: {
     color: "#767676",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-400",
     fontSize: 13,
     fontStyle: "normal",
-    fontWeight: "400",
     lineHeight: 18,
     letterSpacing: -0.325
   },
   dateText: {
     color: "#505050",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-400",
     fontSize: 14,
     fontStyle: "normal",
-    fontWeight: "400",
     lineHeight: 20,
     letterSpacing: -0.35,
     marginBottom: 12,
@@ -241,10 +235,9 @@ const styles = StyleSheet.create({
   },
   dutchMemberText: {
     color: "#505050",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-600",
     fontSize: 12,
     fontStyle: "normal",
-    fontWeight: "600",
     lineHeight: 18,
   },
   dutchMemberNameContainer: {
@@ -260,19 +253,17 @@ const styles = StyleSheet.create({
   },
   dutchMemberNameText: {
     color: "#1B1D28",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-600",
     fontSize: 12,
     fontStyle: "normal",
-    fontWeight: "600",
     lineHeight: 18,
     left: -0.3
   },
   extraMemberText: {
     color: "505050",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-600",
     fontSize: 14,
     fontStyle: "normal",
-    fontWeight: "600",
     lineHeight: 20,
   }
 })

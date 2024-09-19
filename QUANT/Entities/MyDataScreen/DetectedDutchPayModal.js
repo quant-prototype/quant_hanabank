@@ -88,10 +88,9 @@ const styles = StyleSheet.create({
   },
   titleText: {
     color: "#1B1D28",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-600",
     fontSize: 32,
     fontStyle: "normal",
-    fontWeight: "600",
     lineHeight: 42,
     letterSpacing: -0.8
   },
@@ -108,18 +107,16 @@ const styles = StyleSheet.create({
   },
   dateText: {
     color: "#1B1D28",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-400",
     fontSize: 12,
     fontStyle: "normal",
-    fontWeight: "400",
     lineHeight: 18
   },
   timeText: {
     color: "#767676",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-400",
     fontSize: 12,
     fontStyle: "normal",
-    fontWeight: "400",
     lineHeight: 18,
     letterSpacing: -0.3
   },
@@ -130,10 +127,9 @@ const styles = StyleSheet.create({
   },
   mainContentText: {
     color: "#1B1D28",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-600",
     fontSize: 18,
     fontStyle: "normal",
-    fontWeight: "600",
     lineHeight: 26,
     letterSpacing: -0.45
   },

@@ -1,8 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import {useFonts} from "expo-font";
 import * as Linking from 'expo-linking';
-
 import MyDataScreen from './Screens/MyDataScreen';
 import DetailedTransactionBreakdownScreen from './Screens/DetailedTransactionBreakdownScreen';
 import Pay from './Screens/Pay';
@@ -21,6 +22,14 @@ const linking = {
 };
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'Pretendard-300': require('./assets/fonts/Pretendard-Light.otf'),
+    'Pretendard-400': require('./assets/fonts/Pretendard-Regular.otf'),
+    'Pretendard-500': require('./assets/fonts/Pretendard-Medium.otf'),
+    'Pretendard-600': require('./assets/fonts/Pretendard-SemiBold.otf'),
+    'Pretendard-700': require('./assets/fonts/Pretendard-Bold.otf'),
+  })
+  
   return (
     <>
       <StatusBar style="auto" />

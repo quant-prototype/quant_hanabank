@@ -7,12 +7,10 @@ const dummyData = [
   {
     date: "2024.08.16",
     transactions: [
-      { name: "이*은", amount: 100000, type: "송금", time: "19:37" },
-      { name: "박제준", amount: 100000, type: "송금", time: "19:37" },
-      { name: "권*남", amount: 100000, type: "송금", time: "19:37" },
-      { name: "김*우", amount: 100000, type: "송금", time: "19:37" },
-      { name: "용용선생 강남점", amount: -500000, type: "외식", time: "19:37" }
-    ]
+      { name: "용용선생 강남점", amount: -100000, type: "외식", time: "19:37", completedDutch: true, 
+        dutchData: [
+          {member: "이*은", amount: -100000,}, {member: "김*은", amount: -100000}, {member: "박*준", amount: -100000}, {member: "김*우", amount: -100000}, {member: "권*남", amount: -100000}, {member: "김*하", amount: -100000},  {member: "김*하", amount: -100000}, {member: "이*은", amount: -100000,}, {member: "김*은", amount: -100000}, {member: "박*준", amount: -100000}, {member: "김*우", amount: -100000}, {member: "권*남", amount: -100000}, {member: "김*하", amount: -100000},  {member: "김*하", amount: -100000}] }
+    ],
   },
   {
     date: "2024.08.15",
@@ -73,6 +71,7 @@ const processedData = dummyData.map((item) => ({
 export default function TransactionalInformation() {
   const [transactionData, setTransactionData] = useState(processedData);
   const [dutchData, setDutchData] = useState(ductchDummyData);
+  // const [completedDutch, setCompletedDutch] = useState()
   const [isModal, setIsModal] = useState(true);
   const navigation = useNavigation();
 
@@ -82,6 +81,8 @@ export default function TransactionalInformation() {
 
   const breakdown = ({item, index, section}) => {
     const lastItem = index === section.length-1;
+    const sliceMember = item.completedDutch && item.dutchData.slice(0,5);
+    const extraMember = item.completedDutch && item.dutchData.length > 5 && item.dutchData.length - 5;
 
     return (
       // <Pressable>
@@ -97,6 +98,21 @@ export default function TransactionalInformation() {
             </View>
             <Text style={styles.balanceText}>잔액</Text>
           </View>
+          {item.completedDutch && (
+            <View style={styles.dutchMemberContainer}>
+              <Text style={styles.dutchMemberText}>더치페이 멤버</Text>
+              <View style={styles.dutchMemberNameContainer}>
+                {sliceMember.map((data, index) => {
+                  return (
+                    <View key={index} style={styles.dutchMemberNameBox}>
+                      <Text style={styles.dutchMemberNameText}>{data.member}</Text>
+                    </View>
+                  )
+                })}
+                {extraMember > 0 && <Text style={styles.extraMemberText}>+{extraMember}</Text>}
+              </View>
+            </View>
+          )}
         </Pressable>
       // </Pressable>
     )
@@ -153,19 +169,17 @@ const styles = StyleSheet.create({
   },
   nameText: {
     color: "#1B1D28",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-600",
     fontSize: 18,
     fontStyle: "normal",
-    fontWeight: "600",
     lineHeight: 26,
     letterSpacing: -0.45
   },
   amountText: {
     color: "#3A4276",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-600",
     fontSize: 18,
     fontStyle: "normal",
-    fontWeight: "600",
     lineHeight: 26,
     letterSpacing: -0.45
   },
@@ -179,37 +193,33 @@ const styles = StyleSheet.create({
   },
   timeText: {
     color: "#767676",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-400",
     fontSize: 13,
     fontStyle: "normal",
-    fontWeight: "400",
     lineHeight: 18,
     letterSpacing: -0.325
   },
   typeText: {
     color: "#FFAC30",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-400",
     fontSize: 12,
     fontStyle: "normal",
-    fontWeight: "400",
     lineHeight: 18,
     letterSpacing: -0.325
   },
   balanceText: {
     color: "#767676",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-400",
     fontSize: 13,
     fontStyle: "normal",
-    fontWeight: "400",
     lineHeight: 18,
     letterSpacing: -0.325
   },
   dateText: {
     color: "#505050",
-    fontFamily: "Pretendard",
+    fontFamily: "Pretendard-400",
     fontSize: 14,
     fontStyle: "normal",
-    fontWeight: "400",
     lineHeight: 20,
     letterSpacing: -0.35,
     marginBottom: 12,
@@ -219,4 +229,41 @@ const styles = StyleSheet.create({
     backgroundColor: "#F1F1F5",
     height: 1
   },
+  dutchMemberContainer: {
+    marginTop: 12,
+    gap: 4
+  },
+  dutchMemberText: {
+    color: "#505050",
+    fontFamily: "Pretendard-600",
+    fontSize: 12,
+    fontStyle: "normal",
+    lineHeight: 18,
+  },
+  dutchMemberNameContainer: {
+    flexDirection: "row",
+    gap: 8,
+    alignItems: "center"
+  },
+  dutchMemberNameBox: {
+    backgroundColor: "#FFAC30",
+    paddingVertical: 3,
+    paddingHorizontal: 10,
+    borderRadius: 100
+  },
+  dutchMemberNameText: {
+    color: "#1B1D28",
+    fontFamily: "Pretendard-600",
+    fontSize: 12,
+    fontStyle: "normal",
+    lineHeight: 18,
+    left: -0.3
+  },
+  extraMemberText: {
+    color: "505050",
+    fontFamily: "Pretendard-600",
+    fontSize: 14,
+    fontStyle: "normal",
+    lineHeight: 20,
+  }
 })

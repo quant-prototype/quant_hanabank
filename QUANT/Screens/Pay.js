@@ -1,17 +1,22 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Seletor from '../Entities/Pay/Selector'
-import QRCODE from '../assets/images/QRCODE.png'
 import ToolBar from '../Entities/Pay/ToolBar'
+import QRCode from '../Entities/Pay/QRCode'
+import MemberInfo from '../Entities/Pay/MemberInfo'
+import Members from '../Entities/Pay/Members'
 
 export default function Pay() {
+
+    const members = ['a','b', 'c', 'd', 'e','e','a','b']
+
     return (
         <MainLayout>
           <ToolBar title="Pay"/>
             <Seletor />
-            <QRWrap>
-                <QR source={QRCODE} />
-            </QRWrap>
+            <QRCode />
+            <MemberInfo count={members.length} />
+            <Members members={members}/>
         </MainLayout>
     )
 }
@@ -20,11 +25,4 @@ const MainLayout = styled.View`
 height: 100%;
 background-color: white;
 align-items : center;
-`
-
-const QRWrap = styled.Pressable``
-
-const QR = styled.Image`
-width : 279.5px;
-height : 279.5px
 `

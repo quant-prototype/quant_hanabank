@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components/native';
 import ex_profile from '../../assets/images/profile.png';
 
-export default function Members({ members }) {
+export default function Members({ members, blurViewClickedHandler }) {
     return (
-        <MainLayout>
+        <MainLayout onPress={blurViewClickedHandler}>
             <ProfileContainer>
                 <ProfileWrap>
                     {members.slice(0, 5).map((e, i) => (
@@ -20,7 +20,7 @@ export default function Members({ members }) {
     );
 }
 
-const MainLayout = styled.View`
+const MainLayout = styled.Pressable`
   margin-top: 32px;
   align-items: center;
   flex-direction: row;

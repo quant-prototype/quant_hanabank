@@ -2,6 +2,7 @@ import { FlatList, SectionList, StyleSheet, View, Text, Pressable } from "react-
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import DetectedDutchPayModal from "./DetectedDutchPayModal";
+import DutchDetectedButton from "./DutchDetectedButton";
 
 const dummyData = [
   {
@@ -130,7 +131,7 @@ export default function TransactionalInformation() {
   }
 
   return (
-      <>
+      <View>
         <SectionList
           sections={transactionData}
           // style={styles.listContainer}
@@ -140,8 +141,9 @@ export default function TransactionalInformation() {
           stickySectionHeadersEnabled={false}
           showsVerticalScrollIndicator={false}
         />
+        <DutchDetectedButton />
         {isModal && <DetectedDutchPayModal isModal={isModal} setIsModal={setIsModal} dutchData={dutchData} />}
-      </>
+      </View>
   )
 }
 

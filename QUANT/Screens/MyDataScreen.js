@@ -9,7 +9,7 @@ export default function MyDataScreen() {
     <View style={styles.screen}>
       <CloseComponent />
       <TabSelector />
-      <DutchDetectedButton />
+      {/* <DutchDetectedButton /> */}
     </View>
   )
 }
@@ -17,7 +17,7 @@ export default function MyDataScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "#F7F7FB",
     paddingHorizontal: 20
   }
 })

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import TransactionalInformation from "./TransactionalInformation";
+import Portfolio from "./Portfolio";
 
 export default function TabSelector() {
   const [selected, setSelected] = useState("transaction");
@@ -24,6 +25,11 @@ export default function TabSelector() {
         </Pressable>
       </View>
       {selected === "transaction" && <TransactionalInformation />}
+      {selected === "portfolio" && (
+        <ScrollView>
+          <Portfolio />
+        </ScrollView>
+      )}
     </View>
   )
 }

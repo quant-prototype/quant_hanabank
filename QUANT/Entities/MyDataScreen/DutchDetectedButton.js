@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     paddingVertical: 11,
     borderRadius: 100,
     position: "absolute",
-    bottom: "7%",
+    bottom: "30%",
     right: "5%",
     elevation: 4,
     shadowColor: "black",

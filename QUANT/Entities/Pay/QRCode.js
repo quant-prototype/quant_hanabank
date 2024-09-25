@@ -16,14 +16,19 @@ export default function QRCode() {
     }
 
     function qrLongPressHandler() {
-        navigation.navigate('PayProcessing');
+        if(!isLock){
+            navigation.navigate('PayProcessing');
+        }else{
+            alert("잠금을 해제해 주세요.")
+        }
+        
     }
 
     return (
         <QRWrap
             activeOpacity={0.8}
             onPress={qrClickHandler}
-            onLongPress={qrLongPressHandler} // Long press handler added here
+            onLongPress={qrLongPressHandler}
             isLock={isLock}
         >
             <QRBackground

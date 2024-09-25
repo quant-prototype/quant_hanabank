@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/native'
 import Seletor from '../Entities/Pay/Selector'
 import ToolBar from '../Entities/Pay/ToolBar'
@@ -19,6 +19,10 @@ export default function Pay() {
     }
 
     const members = ['권*남', '권*남', '권*남', '권*남', '권*남', '권*남', '권*남', '권*남']
+
+    useEffect(() => {
+        setIsBtnClicked(false)
+    }, [])
 
     return (
         <MainLayout>
@@ -47,9 +51,9 @@ export default function Pay() {
 }
 
 const MainLayout = styled.View`
-height: 100%;
 background-color: white;
 align-items : center;
+height: 100%;
 `
 
 const BlurViewWrap = styled.Pressable`
@@ -64,6 +68,7 @@ const StyledBlurView = styled(BlurView)`
   bottom: 0;
   justify-content: center;
   align-items: center;
+  height: 100%;
 `;
 
 

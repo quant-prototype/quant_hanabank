@@ -4,7 +4,7 @@ import MemberCell from '../Entities/PayProcessing/MemberCell';
 import { useNavigation } from '@react-navigation/native';
 
 export default function PayCompleted() {
-    const members = ['권*남', '권*남', '권*남', '권*남', '권*남', '권*남', '권*남', '권*남'];
+    const members = ['권*남', '김*수', '박*영', '이*민', '최*준', '장*희', '정*아', '오*석'];
     const navigation = useNavigation();
 
 
@@ -36,14 +36,14 @@ const MainLayout = styled.View`
 
 const MainTitle = styled.Text`
   font-size: 36px;
-  font-weight: 600;
+  fontFamily: "Pretendard-600";
   margin-top: 110px;
   margin-bottom: 24px;
 `;
 
 const Price = styled.Text`
   font-size: 20px;
-  font-weight: 400;
+  fontFamily: "Pretendard-400";
   margin-bottom: 32px;
 `;
 
@@ -65,6 +65,6 @@ const CompleteButton = styled.TouchableOpacity`
 
 const CompleteText = styled.Text`
   font-size: 16px;
-  font-weight: 600;
+  fontFamily: "Pretendard-600";
   color: white;
 `;

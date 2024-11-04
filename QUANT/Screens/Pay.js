@@ -74,13 +74,13 @@ const StyledBlurView = styled(BlurView)`
 
 const MainTitle = styled.Text`
 font-size: 20;
-font-weight: 600;
+fontFamily: "Pretendard-600";
 margin-bottom: 10
 `
 
 const SubTitle = styled.Text`
 font-size: 56;
-font-weight: 500;
+fontFamily: "Pretendard-500";
 margin-bottom: 50
 `
 
@@ -93,7 +93,7 @@ gap: 20
 const BlurText = styled.Text`
   color: black;
   font-size: 28px;
-  font-weight: 400;
+  fontFamily: "Pretendard-400";
   position: relative;
   top: -2
 `;

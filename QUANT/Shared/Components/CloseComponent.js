@@ -14,7 +14,7 @@ export default function CloseComponent() {
           <CloseIcon />
         </Pressable>
 
-        <Pressable style={styles.test} onPress={clickButton}>
+        <Pressable onPress={clickButton}>
           <Text>결제하러가기</Text>
         </Pressable>
         
@@ -27,9 +27,5 @@ const styles = StyleSheet.create({
   closeContainer: {
     paddingVertical: 14,
     alignItems: "flex-end",
-    backgroundColor: "yellow"
   },
-  test: {
-    backgroundColor: "blue"
-  }
 })

@@ -7,10 +7,10 @@ import * as Linking from 'expo-linking';
 import MyDataScreen from './Screens/MyDataScreen';
 import DetailedTransactionBreakdownScreen from './Screens/DetailedTransactionBreakdownScreen';
 import Pay from './Screens/Pay';
+import DetailedCategoryBreakdown from './Screens/DetailedCategoryBreakdown';
 import PayProcessing from './Screens/PayProcessing';
 import PayCompleted from './Screens/PayCompleted';
 import Main from './Screens/Main';
-
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +45,7 @@ export default function App() {
           <Stack.Screen name="Main" component={Main} />
           <Stack.Screen name="MyData" component={MyDataScreen} />
           <Stack.Screen name="DetailedTransactionBreakdown" component={DetailedTransactionBreakdownScreen} />
+          <Stack.Screen name="DetailedCategoryBreakdown" component={DetailedCategoryBreakdown} />
           <Stack.Screen name="Pay" component={Pay}  />
           <Stack.Screen name="PayProcessing" component={PayProcessing}  />
           <Stack.Screen name="PayCompleted" component={PayCompleted}  />

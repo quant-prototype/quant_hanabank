@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   listInnerContainer: {
     // gap: 16,
     // backgroundColor: "blue",
-    paddingBottom: 200,
+    paddingBottom: 250,
   },
   breakdownContainer: {
     gap: 4,

@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     marginTop: 12
   },
   dutchPayMemberInnerContainer: {
-    paddingBottom: 30,
+    paddingBottom: 110,
     gap: 16
   },
   dutchPayMemberText: {

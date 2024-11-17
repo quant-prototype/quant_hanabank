@@ -39,28 +39,30 @@ export default function Portfolio() {
 
   return (
     <>
-      <View style={styles.monthlyPieChartContainer}>
-          <Pressable onPress={backMonthHandler} android_ripple={{color: "#ccc"}} style={({pressed}) => [styles.skipArrowButtonContainer, pressed && {opacity: 0.4}]}>
-            <LeftSkipArrow />
-          </Pressable>
-          <View style={styles.pieChartContainer}>
-            <Svg style={styles.pieChart}>
-              <G x={100} y={100}>
-                {pieData.map((data, index) => {
-                  const path = arcGenerator(data);
-                  return (
-                    <Path key={index} d={path} fill={dummyColors[index]} />
-                  );
-                })}
-              </G>
-            </Svg>
-            <Text style={styles.monthText}>{month}월</Text>
-          </View>
-          <Pressable onPress={nextMonthHandler} android_ripple={{color: "#ccc"}} style={({pressed}) => [styles.skipArrowButtonContainer, pressed && {opacity: 0.4}]}>
-            <RightSkipArrow />
-          </Pressable>
+      <View style={styles.monthlySummayBackground}>
+        <View style={styles.monthlyPieChartContainer}>
+            <Pressable onPress={backMonthHandler} android_ripple={{color: "#ccc"}} style={({pressed}) => [styles.skipArrowButtonContainer, pressed && {opacity: 0.4}]}>
+              <LeftSkipArrow />
+            </Pressable>
+            <View style={styles.pieChartContainer}>
+              <Svg style={styles.pieChart}>
+                <G x={100} y={100}>
+                  {pieData.map((data, index) => {
+                    const path = arcGenerator(data);
+                    return (
+                      <Path key={index} d={path} fill={dummyColors[index]} />
+                    );
+                  })}
+                </G>
+              </Svg>
+              <Text style={styles.monthText}>{month}월</Text>
+            </View>
+            <Pressable onPress={nextMonthHandler} android_ripple={{color: "#ccc"}} style={({pressed}) => [pressed && {opacity: 0.4}]}>
+              <RightSkipArrow />
+            </Pressable>
+        </View>
+        <PortfolioTotalAmountText totalAmount={totalAmount} />
       </View>
-      <PortfolioTotalAmountText totalAmount={totalAmount} />
       <View style={styles.categoryBreakdownContainer}>
         {dummyData.map((item, index) => {
           return (
@@ -73,11 +75,17 @@ export default function Portfolio() {
 }
 
 const styles = StyleSheet.create({
+  monthlySummayBackground: {
+    marginTop: 20,
+    backgroundColor: "#FFF",
+    borderRadius: 12
+  },
   monthlyPieChartContainer: {
     marginTop: 32,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    paddingHorizontal: 20,
   },
   pieChartContainer: {
     justifyContent: "center",
@@ -96,14 +104,8 @@ const styles = StyleSheet.create({
     letterSpacing: -0.5,
     position: "absolute",
   },
-  skipArrowButtonContainer: {
-    backgroundColor: "white",
-    padding: 7.5,
-    borderRadius: 75,
-    justifyContent: "center",
-    alignItems: "center",
-  },
   categoryBreakdownContainer: {
+    marginTop: 15,
     gap: 12,
     paddingBottom: 250,
   },

@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   totalAmount: {
     marginTop: 4,
-    marginBottom: 32,
+    marginBottom: 30,
     textAlign: "center",
     color: "#1B1D28",
     fontFamily: "Pretendard-600",

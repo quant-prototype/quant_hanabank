@@ -62,6 +62,10 @@ export default function DetailedCategoryBreakdown({navigation, route}) {
     navigation.goBack();
   }
 
+  const detailTransactionBreakdownHandler = (title,{data, date}) => {
+    navigation.navigate("DetailedTransactionBreakdown", {title, data, date});
+  }
+
   const title = route.params.title;
   const amount = route.params.amount;
 
@@ -69,7 +73,7 @@ export default function DetailedCategoryBreakdown({navigation, route}) {
     <View style={styles.screen}>
       <BackComponent backPageHandler={backPageHandler} />
       <CategoryTitle title={title} amount={amount}/>
-      <TransactionComponent transactionData={transactionData} detailCategory="detailCategory" />
+      <TransactionComponent transactionData={transactionData} detailTransactionBreakdownHandler={detailTransactionBreakdownHandler} detailCategory="detailCategory" />
     </View>
   )
 }

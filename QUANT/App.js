@@ -39,7 +39,7 @@ export default function App() {
       <StatusBar style="auto" />
       <NavigationContainer linking={linking}>
         <Stack.Navigator 
-          initialRouteName='Main'
+          initialRouteName='MyData'
           screenOptions={{ headerShown: false }}
           >
           <Stack.Screen name="Main" component={Main} />

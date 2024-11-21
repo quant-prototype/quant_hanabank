@@ -1,4 +1,5 @@
 import { Pressable, SectionList, StyleSheet, Text, View } from "react-native";
+import { primeColor } from "../Style/color";
 
 export default function TransactionComponent({transactionData, detailTransactionBreakdownHandler, detailCategory}) {
   const breakdown = ({item, index, section}) => {
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.325
   },
   typeText: {
-    color: "#FFAC30",
+    color: primeColor,
     fontFamily: "Pretendard-400",
     fontSize: 12,
     fontStyle: "normal",
@@ -159,13 +160,13 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   dutchMemberNameBox: {
-    backgroundColor: "#FFAC30",
+    backgroundColor: primeColor,
     paddingVertical: 3,
     paddingHorizontal: 10,
     borderRadius: 100
   },
   dutchMemberNameText: {
-    color: "#1B1D28",
+    color: "#FFF",
     fontFamily: "Pretendard-600",
     fontSize: 12,
     fontStyle: "normal",

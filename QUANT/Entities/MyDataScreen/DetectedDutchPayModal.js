@@ -40,7 +40,7 @@ export default function DetectedDutchPayModal({isModal, setIsModal, dutchData}) 
           </View>
           <View style={styles.dutchDataContainer}>
             {dutchData.map((item,index) => {
-              const isSelected = selectedCheckBox.includes(index);
+              const isSelected = selectedCheckBox.includes(item);
               return (
                 <View key={index} style={styles.dutchDataContentContainer}>
                   <View style={styles.dateAndTimeContainer}>
@@ -51,7 +51,7 @@ export default function DetectedDutchPayModal({isModal, setIsModal, dutchData}) 
                     <Text style={styles.mainContentText}>{item.name}</Text>
                     <View style={styles.mainContentContainerRightContainer}>
                       <Text style={styles.mainContentText}>{item.amount.toLocaleString()}원</Text>
-                      <Pressable android_ripple={{color: "ccc"}} style={({pressed}) => pressed && {opacity: 0.5}} onPress={()=>toggleCheckBoxHandler(index)}>{isSelected ? <SelectedCheckBoxIcon /> : <CheckBoxIcon />}</Pressable>
+                      <Pressable android_ripple={{color: "ccc"}} style={({pressed}) => pressed && {opacity: 0.5}} onPress={()=>toggleCheckBoxHandler(item)}>{isSelected ? <SelectedCheckBoxIcon /> : <CheckBoxIcon />}</Pressable>
                     </View>
                   </View>
                 </View>
@@ -59,7 +59,7 @@ export default function DetectedDutchPayModal({isModal, setIsModal, dutchData}) 
             })}
           </View>
           <View style={{marginTop: 48}}>
-            <BottomButton text="맞아요" handler={confirmButtonHandler} />
+            <BottomButton text="맞아요" handler={confirmButtonHandler} selected={selectedCheckBox} />
           </View>
         </View>
       </View>

@@ -3,6 +3,7 @@ import ShoppingIcon from "../../assets/images/detailShopping.svg";
 import PlaneIcon from "../../assets/images/detailFlight.svg";
 import TransferIcon from "../../assets/images/detailTransfer.svg";
 import FoodIcon from "../../assets/images/detailFood.svg";
+import HealthIcon from "../../assets/images/detailHealth.svg";
 
 export default function CategoryTitle({title, amount}) {
   const categoryAmount = amount.toLocaleString();
@@ -13,7 +14,7 @@ export default function CategoryTitle({title, amount}) {
       {title === "쇼핑" && <ShoppingIcon style={styles.detailIcon} />}
       {title === "이체" && <TransferIcon style={styles.detailIcon} />}
       {title === "음식" && <FoodIcon style={styles.detailIcon} />}
-      {/* {title === "의료ㆍ건강" && <HealthIcon style={styles.icon} />} */}
+      {title === "의료ㆍ건강" && <HealthIcon style={styles.detailIcon} />}
       {title === "취미ㆍ여가" && <PlaneIcon style={styles.detailIcon} />}
     </View>
   )

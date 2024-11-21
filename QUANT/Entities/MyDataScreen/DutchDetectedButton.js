@@ -1,5 +1,6 @@
 import { Pressable, Text, StyleSheet } from "react-native"
 import DetectIcon from "../../assets/images/detect.svg";
+import { primeColor } from "../../Shared/Style/color";
 
 export default function DutchDetectedButton() {
   return (
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
     gap: 4,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#FFAC30",
+    backgroundColor: primeColor,
     paddingHorizontal: 16,
     paddingVertical: 11,
     borderRadius: 100,

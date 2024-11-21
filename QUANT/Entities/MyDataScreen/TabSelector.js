@@ -2,25 +2,22 @@ import { useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import TransactionalInformation from "./TransactionalInformation";
 import Portfolio from "./Portfolio";
+import { primeColor } from "../../Shared/Style/color";
 
 export default function TabSelector() {
   const [selected, setSelected] = useState("transaction");
 
-  const transactionTabHandler = () => {
-    setSelected("transaction");
-  }
-
-  const portfolioTabHandler = () => {
-    setSelected("portfolio");
+  const tabHandler = (tab) => {
+    setSelected(tab);
   }
 
   return (
     <View>
       <View style={styles.tabContainer}>
-        <Pressable android_ripple={{color: "#ccc"}} style={({pressed}) => [styles.tab, selected === "transaction" && styles.selectedTab, pressed && styles.pressedTab]} onPress={transactionTabHandler}>
+        <Pressable android_ripple={{color: "#ccc"}} style={({pressed}) => [styles.tab, selected === "transaction" && styles.selectedTab, pressed && styles.pressedTab]} onPress={() => tabHandler("transaction")}>
           <Text style={[styles.tabText, selected === "transaction" && styles.selectedTabText]}>거래 내역</Text>
         </Pressable>
-        <Pressable style={({pressed}) => [styles.tab, selected === "portfolio" && styles.selectedTab, pressed && styles.pressedTab]} onPress={portfolioTabHandler}>
+        <Pressable style={({pressed}) => [styles.tab, selected === "portfolio" && styles.selectedTab, pressed && styles.pressedTab]} onPress={() => tabHandler("portfolio")}>
           <Text style={[styles.tabText, selected === "portfolio" && styles.selectedTabText]}>포트폴리오</Text>
         </Pressable>
       </View>
@@ -47,7 +44,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "blue"
   },
   selectedTab: {
-    borderBottomColor: "#FFAC30",
+    borderBottomColor: primeColor,
     borderBottomWidth: 2,
     borderStyle: "solid",
   },
@@ -63,6 +60,6 @@ const styles = StyleSheet.create({
     letterSpacing: -0.45
   },
   selectedTabText: {
-    color: "#FFAC30"
+    color: primeColor
   }
 })

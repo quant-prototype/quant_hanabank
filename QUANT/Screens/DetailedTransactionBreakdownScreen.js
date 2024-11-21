@@ -22,7 +22,7 @@ export default function DetailedTransactionBreakdownScreen({navigation, route}) 
         <BackComponent title={title} backPageHandler={backPageHandler} />
         <DetailedTransaction data={data} transactionDate={transactionDate} />
         <View style={styles.bottomButtonContainer}>
-          <BottomButton text="확인" />
+          <BottomButton text="확인" fixedColor/>
         </View>
       </View>
     </>

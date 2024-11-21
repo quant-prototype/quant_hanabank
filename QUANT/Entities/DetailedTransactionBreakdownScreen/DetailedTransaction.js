@@ -3,6 +3,7 @@ import PencilIcon from "../../assets/images/pencil.svg";
 import CircledCloseIcon from "../../assets/images/circledClose.svg";
 import { useState } from "react";
 import BottomButton from "../../Shared/Components/BottomButton";
+import { primeColor } from "../../Shared/Style/color";
 
 export default function DetailedTransaction({data, transactionDate}) {
   const [isFocused, setIsFocused] = useState(false);
@@ -64,7 +65,7 @@ export default function DetailedTransaction({data, transactionDate}) {
               )
             })}
             <View style={styles.informBoxContainer}>
-              <View style={[styles.informBox, {backgroundColor: "#FFAC30"}]}>
+              <View style={[styles.informBox, {backgroundColor: primeColor}]}>
                 <Text style={[styles.informText, {color: "#FFF"}]}>총 금액</Text>
                 <Text style={[styles.informAmountText, {color: "#FFF"}]}>원</Text>
               </View>
@@ -165,13 +166,13 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   dutchMemberNameBox: {
-    backgroundColor: "#FFAC30",
+    backgroundColor: primeColor,
     paddingVertical: 4,
     paddingHorizontal: 12,
     borderRadius: 100
   },
   dutchMemberNameText: {
-    color: "#212330",
+    color: "#F7F7FB",
     fontFamily: "Pretendard-600",
     fontSize: 14,
     fontStyle: "normal",

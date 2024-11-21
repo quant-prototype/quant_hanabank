@@ -1,10 +1,7 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="shopping">
-<g id="Group">
-<path id="Vector" d="M17.6669 15.334H7.27799L5.86133 6.83398H20.5002L17.6669 15.334Z" fill="white"/>
-<path id="Vector_2" d="M3.5 4H5.38889L5.86111 6.83333M5.86111 6.83333L7.27778 15.3333H17.6667L20.5 6.83333H5.86111Z" stroke="white" stroke-width="1.88889" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_3" d="M8.22179 21.0002C8.74339 21.0002 9.16623 20.5774 9.16623 20.0558C9.16623 19.5342 8.74339 19.1113 8.22179 19.1113C7.70019 19.1113 7.27734 19.5342 7.27734 20.0558C7.27734 20.5774 7.70019 21.0002 8.22179 21.0002Z" stroke="white" stroke-width="1.88889" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_4" d="M16.7218 21.0002C17.2434 21.0002 17.6662 20.5774 17.6662 20.0558C17.6662 19.5342 17.2434 19.1113 16.7218 19.1113C16.2002 19.1113 15.7773 19.5342 15.7773 20.0558C15.7773 20.5774 16.2002 21.0002 16.7218 21.0002Z" stroke="white" stroke-width="1.88889" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-</g>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="20" cy="20" r="20" fill="#18CD73"/>
+<path d="M25.6649 23.334H15.276L13.8594 14.834H28.4983L25.6649 23.334Z" fill="#F7F7FB"/>
+<path d="M11.5 12H13.3889L13.8611 14.8333M13.8611 14.8333L15.2778 23.3333H25.6667L28.5 14.8333H13.8611Z" stroke="#F7F7FB" stroke-width="1.88889" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.2218 29.0002C16.7434 29.0002 17.1662 28.5774 17.1662 28.0558C17.1662 27.5342 16.7434 27.1113 16.2218 27.1113C15.7002 27.1113 15.2773 27.5342 15.2773 28.0558C15.2773 28.5774 15.7002 29.0002 16.2218 29.0002Z" stroke="#F7F7FB" stroke-width="1.88889" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24.7218 29.0002C25.2434 29.0002 25.6662 28.5774 25.6662 28.0558C25.6662 27.5342 25.2434 27.1113 24.7218 27.1113C24.2002 27.1113 23.7773 27.5342 23.7773 28.0558C23.7773 28.5774 24.2002 29.0002 24.7218 29.0002Z" stroke="#F7F7FB" stroke-width="1.88889" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

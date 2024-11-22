@@ -14,9 +14,9 @@ export default function CloseComponent() {
           <CloseIcon />
         </Pressable>
 
-        <Pressable onPress={clickButton}>
+        {/* <Pressable onPress={clickButton}>
           <Text>결제하러가기</Text>
-        </Pressable>
+        </Pressable> */}
         
       </View>
     </SafeAreaView>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import TransactionalInformation from "./TransactionalInformation";
 import Portfolio from "./Portfolio";
-import { primeColor } from "../../Shared/Style/color";
+import { primeColor } from "../../Shared/Style/color.js";
 
 export default function TabSelector() {
   const [selected, setSelected] = useState("transaction");

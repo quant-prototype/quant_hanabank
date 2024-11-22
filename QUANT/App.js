@@ -4,13 +4,13 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import {useFonts} from "expo-font";
 import * as Linking from 'expo-linking';
-import MyDataScreen from './Screens/MyDataScreen';
-import DetailedTransactionBreakdownScreen from './Screens/DetailedTransactionBreakdownScreen';
-import Pay from './Screens/Pay';
-import DetailedCategoryBreakdown from './Screens/DetailedCategoryBreakdown';
-import PayProcessing from './Screens/PayProcessing';
-import PayCompleted from './Screens/PayCompleted';
-import Main from './Screens/Main';
+import MyDataScreen from './src/Screens/MyDataScreen';
+import DetailedTransactionBreakdownScreen from './src/Screens/DetailedTransactionBreakdownScreen';
+import Pay from './src/Screens/Pay';
+import DetailedCategoryBreakdown from './src/Screens/DetailedCategoryBreakdown';
+import PayProcessing from './src/Screens/PayProcessing';
+import PayCompleted from './src/Screens/PayCompleted';
+import Main from './src/Screens/Main';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,11 +27,11 @@ const linking = {
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    'Pretendard-300': require('./assets/fonts/Pretendard-Light.otf'),
-    'Pretendard-400': require('./assets/fonts/Pretendard-Regular.otf'),
-    'Pretendard-500': require('./assets/fonts/Pretendard-Medium.otf'),
-    'Pretendard-600': require('./assets/fonts/Pretendard-SemiBold.otf'),
-    'Pretendard-700': require('./assets/fonts/Pretendard-Bold.otf'),
+    'Pretendard-300': require('./src/assets/fonts/Pretendard-Light.otf'),
+    'Pretendard-400': require('./src/assets/fonts/Pretendard-Regular.otf'),
+    'Pretendard-500': require('./src/assets/fonts/Pretendard-Medium.otf'),
+    'Pretendard-600': require('./src/assets/fonts/Pretendard-SemiBold.otf'),
+    'Pretendard-700': require('./src/assets/fonts/Pretendard-Bold.otf'),
   })
   
   return (
